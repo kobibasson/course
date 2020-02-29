@@ -11,12 +11,6 @@
     <artifactId>time-tracker-core</artifactId>
     <packaging>jar</packaging>
     <name>Time Tracker (Core)</name>
-    <distributionManagement>
-        <repository>
-            <id>nexus-releases</id>
-            <url>http://nexus:8081/repository/maven-releases/</url>
-        </repository>
-    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
