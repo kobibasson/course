@@ -11,7 +11,12 @@
     </description>
     <inceptionYear>2015</inceptionYear>
     <url>http://jenkins.training/</url>
-
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://nexus:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
     <properties>
         <spring.version>4.1.6.RELEASE</spring.version>
         <java.version>1.8</java.version>
