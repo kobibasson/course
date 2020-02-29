@@ -15,8 +15,6 @@
         <repository>
             <id>nexus-releases</id>
             <url>http://nexus:8081/repository/maven-releases/</url>
-            <username>${nexus.username}</username>
-            <password>${nexus.password}</password>
         </repository>
         <snapshotRepository>
             <id>nexus-snapshots</id>
