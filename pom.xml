@@ -67,6 +67,8 @@
                     <configuration>
                         <serverId>nexus</serverId>
                         <nexusUrl>http://nexus:8081/nexus/</nexusUrl>
+                        <username>${nexus.username}</username>
+                        <password>${nexus.password}</password>
                         <skipStaging>true</skipStaging>
                     </configuration>
                 </plugin>
@@ -83,13 +85,6 @@
             </plugins>
         </pluginManagement>
     </build>
-    <servers>
-        <server>
-            <id>nexus-releases</id>
-            <username>${env.NEXUS_USERNAME}</username>
-            <password>${env.NEXUS_PASSWORD}</password>
-        </server>
-    </servers>
     <reporting>
         <plugins>
             <plugin>
