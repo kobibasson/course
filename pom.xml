@@ -4,7 +4,7 @@
     <groupId>clinic.programming.time-tracker</groupId>
     <artifactId>time-tracker-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.3.1</version>
+    <version>0.3.1-SNAPSHOT</version>
     <name>Time Tracker (Parent)</name>
     <description>
         This is a simple Maven / Java web project.
@@ -13,12 +13,12 @@
     <url>http://jenkins.training/</url>
     <distributionManagement>
         <snapshotRepository>
-        <id>nexus-snapshots</id>
-        <url>http://nexus:8081/repository/maven-snapshots/</url>
+            <id>nexus-snapshots</id>
+            <url>http://nexus:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
-        <id>nexus-releases</id>
-        <url>http://nexus:8081/repository/maven-releases/</url>
+            <id>nexus-releases</id>
+            <url>http://nexus:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
     <properties>
@@ -65,7 +65,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <serverId>nexus</serverId>
+                        <serverId>nexus-releases</serverId>
                         <nexusUrl>http://nexus:8081/nexus/</nexusUrl>
                         <skipStaging>true</skipStaging>
                     </configuration>
@@ -117,4 +117,3 @@
         </plugins>
     </reporting>
 </project>
-
