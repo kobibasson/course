@@ -5,7 +5,7 @@ node {
       }
       stage('SonarQube analysis') {
         withSonarQubeEnv(credentialsId: 'scanner', installationName: 'sonar') {
-          //sh 'mvn clean verify sonar:sonar'
+          sh 'mvn clean verify sonar:sonar'
         }
       }
       stage('Build War') {
@@ -24,11 +24,17 @@ node {
               [
               artifactId: 'time-tracker-web',
               classifier: '',
-              file: "${JENKINS_HOME}/.m2/repository/clinic/programming/time-tracker/time-tracker-web/0.3.1/time-tracker-web-0.3.1.war",
+              file: "/var/jenkins_home/workspace/maven-push/?/.m2/repository/clinic/programming/time-tracker/time-tracker-web/0.3.1/time-tracker-web-0.3.1.war",
               type: 'war'
               ]
           ]
         )
       }
     }
+    stage('Build Docker Image') {
+        withDockerRegistry([ credentialsId: "nexus", url: "http://172.31.5.214:8083" ]) {
+          tracker = docker.build("172.31.5.214:8083/automat-it/time-tracker-web:0.3.1")
+          tracker.push()
+        }
+      }
 }
