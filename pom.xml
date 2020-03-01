@@ -14,11 +14,11 @@
     <distributionManagement>
         <repository>
             <id>nexus-releases</id>
-            <url>http://nexus:8081/repository/maven-releases/</url>
+            <url>http://172.31.5.214:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>nexus-snapshots</id>
-            <url>http://nexus:8081/repository/maven-snapshots/</url>
+            <url>http://172.31.5.214:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
     <properties>
@@ -66,7 +66,7 @@
                     </executions>
                     <configuration>
                         <serverId>nexus</serverId>
-                        <nexusUrl>http://nexus:8081/nexus/</nexusUrl>
+                        <nexusUrl>http://172.31.5.214:8081/nexus/</nexusUrl>
                         <skipStaging>true</skipStaging>
                     </configuration>
                 </plugin>
